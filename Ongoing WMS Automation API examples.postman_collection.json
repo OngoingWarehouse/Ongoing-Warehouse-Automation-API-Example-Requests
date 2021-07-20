@@ -1,0 +1,404 @@
+{
+	"info": {
+		"_postman_id": "231b4e59-11ed-4c94-81a2-a1104aeeb716",
+		"name": "Ongoing WMS Automation API examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Article",
+			"item": [
+				{
+					"name": "Get articles by query",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/GetArticlesByQuery\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetArticlesByQuery xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Query>\r\n                <ArticleDefIds>\r\n                    <int>123</int>\r\n                </ArticleDefIds>\r\n                <GoodsOwnerId>{{GoodsOwnerId}}</GoodsOwnerId>\r\n            </Query>\r\n        </GetArticlesByQuery>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get article package types",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/GetArticlesPackageTypes\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\r\n    <soap:Body>\r\n        <GetArticlesPackageTypes xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Query>\r\n                <ArticleDefIds>\r\n                    <int>123</int>\r\n                </ArticleDefIds>\r\n            </Query>\r\n        </GetArticlesPackageTypes>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update article",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/UpdateArticle\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <UpdateArticle xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <UpdateArticle>\r\n                <ArticleDefId>123</ArticleDefId>\r\n                <UpdateArticleName>\r\n                    <ArticleName>New article name</ArticleName>\r\n                </UpdateArticleName>\r\n            </UpdateArticle>\r\n        </UpdateArticle>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Article item",
+			"item": [
+				{
+					"name": "Get article items by query",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/GetArticleItemsByQuery\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetArticleItemsByQuery xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Query>\r\n                <Locations>\r\n                    <string>A1</string>\r\n                </Locations>\r\n                <GoodsOwnerId>{{GoodsOwnerId}}</GoodsOwnerId>\r\n            </Query>\r\n        </GetArticleItemsByQuery>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get orders by query",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/GetOrdersByQuery\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetOrdersByQuery xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Query>\r\n                <OrderIds>\r\n                    <int>123</int>\r\n                </OrderIds>\r\n            </Query>\r\n        </GetOrdersByQuery>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update order",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/UpdateOrder\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <UpdateOrder xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Order>\r\n                <OrderId>123</OrderId>\r\n                <UpdateOrderWaybill>\r\n                    <Waybill>New waybill</Waybill>\r\n                </UpdateOrderWaybill>\r\n            </Order>\r\n        </UpdateOrder>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Goods owners",
+			"item": [
+				{
+					"name": "Get goods owners by query",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/GetGoodsOwnersByQuery\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetGoodsOwnersByQuery  xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Query />\r\n        </GetGoodsOwnersByQuery>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Printing",
+			"item": [
+				{
+					"name": "Create print job",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/CreatePrintJob\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <CreatePrintJob xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <PrintJob>\r\n                <ReportId>47</ReportId>\r\n                <IdsToPrint>\r\n                    <int>10032</int>\r\n                    <int>10033</int>\r\n                </IdsToPrint>\r\n                <PrintAsUser>\r\n                    <UserName>WarehouseWorker1</UserName>\r\n                </PrintAsUser>\r\n                <PrintAsComputer>\r\n                    <ComputerName>PackTable1</ComputerName>\r\n                </PrintAsComputer>\r\n                <PrintAsGoodsOwner>\r\n                    <GoodsOwnerId>45</GoodsOwnerId>\r\n                </PrintAsGoodsOwner>\r\n            </PrintJob>\r\n        </CreatePrintJob>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "GoodsOwnerId",
+			"value": "-1"
+		},
+		{
+			"key": "Username",
+			"value": "Username"
+		},
+		{
+			"key": "Password",
+			"value": "Password"
+		},
+		{
+			"key": "OngoingURL",
+			"value": "https://api.ongoingsystems.se/YourWarehouse/Automation.asmx"
+		}
+	]
+}

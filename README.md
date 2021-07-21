@@ -1,5 +1,5 @@
 <a href="https://www.ongoingwarehouse.com">![Logo](https://www.ongoingwarehouse.com/images/logotype.png)</a>
-# Ongoing Warehouse Automation REST API example requests
+# Ongoing Warehouse Automation API example requests
 [Ongoing WMS](https://www.ongoingwarehouse.com/) is a Warehouse Management System (WMS).
 
 We provide several [Application Programming Interfaces (APIs)](https://developer.ongoingwarehouse.com/). One of them is called [the Automation API](https://developer.ongoingwarehouse.com/Automation-API). This API allows an external system to perform certain internal warehouse operations, like moving goods from one location to another.

@@ -295,7 +295,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <UploadOrderFile xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{UserName}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <OrderFile>\r\n                <File>\r\n                    <FileName>TestFile.txt</FileName>\r\n                    <FileBytes>VGVzdGluZyAxMjM=</FileBytes>\r\n                    <MimeType>text/plain</MimeType>\r\n                </File>\r\n                <GoodsOwnerId>{{GoodsOwnerId}}</GoodsOwnerId>\r\n                <OrderFileIdentificationType>GoodsOwnerOrderNumber</OrderFileIdentificationType>\r\n                <GoodsOwnerOrderNumber>{{GoodsOwnerOrderNumber}}</GoodsOwnerOrderNumber>\r\n            </OrderFile>\r\n        </UploadOrderFile>\r\n    </soap:Body>",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <UploadOrderFile xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <OrderFile>\r\n                <File>\r\n                    <FileName>TestFile.txt</FileName>\r\n                    <FileBytes>VGVzdGluZyAxMjM=</FileBytes>\r\n                    <MimeType>text/plain</MimeType>\r\n                </File>\r\n                <GoodsOwnerId>{{GoodsOwnerId}}</GoodsOwnerId>\r\n                <OrderFileIdentificationType>GoodsOwnerOrderNumber</OrderFileIdentificationType>\r\n                <GoodsOwnerOrderNumber>{{GoodsOwnerOrderNumber}}</GoodsOwnerOrderNumber>\r\n            </OrderFile>\r\n        </UploadOrderFile>\r\n    </soap:Body>\r\n</soap:Envelope>",
 							"options": {
 								"raw": {
 									"language": "xml"
@@ -378,7 +378,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <UploadInOrderFile xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{UserName}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Operation>\r\n                <InOrderIdentification>\r\n                    <InOrderId>{{InOrderId}}</InOrderId>\r\n                </InOrderIdentification>\r\n                <FileIdentification>FileName</FileIdentification>\r\n                <File>\r\n                    <FileName>TestFile.txt</FileName>\r\n                    <FileBytes>VGVzdGluZyAxMjM=</FileBytes>\r\n                    <MimeType>text/plain</MimeType>\r\n                </File>\r\n            </Operation>\r\n        </UploadInOrderFile>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <UploadInOrderFile xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Operation>\r\n                <InOrderIdentification>\r\n                    <InOrderId>{{InOrderId}}</InOrderId>\r\n                </InOrderIdentification>\r\n                <FileIdentification>FileName</FileIdentification>\r\n                <File>\r\n                    <FileName>TestFile.txt</FileName>\r\n                    <FileBytes>VGVzdGluZyAxMjM=</FileBytes>\r\n                    <MimeType>text/plain</MimeType>\r\n                </File>\r\n            </Operation>\r\n        </UploadInOrderFile>\r\n    </soap:Body>\r\n</soap:Envelope>",
 							"options": {
 								"raw": {
 									"language": "xml"
@@ -510,7 +510,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetFileList xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{UserName}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <FileSearchValues>\r\n                <GoodsOwnerId>{{GoodsOwnerId}}</GoodsOwnerId>\r\n                <OrderId>{{OrderId}}</OrderId>\r\n                <!--<GoodsOwnerCode>string</GoodsOwnerCode> -->\r\n                <!--<ArticleNo>string</ArticleNo> -->\r\n                <!--<ArticleName>string</ArticleName> -->\r\n                <!--<OrderNumber>string</OrderNumber> -->\r\n                <!--<ArticleSystemId>int</ArticleSystemId> -->\r\n                <!--<InOrderId>int</InOrderId> -->\r\n            \r\n            </FileSearchValues>\r\n        </GetFileList>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetFileList xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <FileSearchValues>\r\n                <GoodsOwnerId>{{GoodsOwnerId}}</GoodsOwnerId>\r\n                <OrderId>{{OrderId}}</OrderId>\r\n                <!--<GoodsOwnerCode>string</GoodsOwnerCode> -->\r\n                <!--<ArticleNo>string</ArticleNo> -->\r\n                <!--<ArticleName>string</ArticleName> -->\r\n                <!--<OrderNumber>string</OrderNumber> -->\r\n                <!--<ArticleSystemId>int</ArticleSystemId> -->\r\n                <!--<InOrderId>int</InOrderId> -->\r\n            \r\n            </FileSearchValues>\r\n        </GetFileList>\r\n    </soap:Body>\r\n</soap:Envelope>",
 							"options": {
 								"raw": {
 									"language": "xml"
@@ -549,7 +549,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetFile xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{UserName}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <FileId>{{FileId}}</FileId>\r\n        </GetFile>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"raw": "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetFile xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <FileId>{{FileId}}</FileId>\r\n        </GetFile>\r\n    </soap:Body>\r\n</soap:Envelope>",
 							"options": {
 								"raw": {
 									"language": "xml"
@@ -593,7 +593,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetUsers xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{UserName}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Query />\r\n        </GetUsers>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"raw": "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetUsers xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Query />\r\n        </GetUsers>\r\n    </soap:Body>\r\n</soap:Envelope>",
 							"options": {
 								"raw": {
 									"language": "xml"

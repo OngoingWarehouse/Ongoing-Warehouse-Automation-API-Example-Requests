@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "231b4e59-11ed-4c94-81a2-a1104aeeb716",
+		"_postman_id": "4ae1bf13-f8f6-4b0a-8f2e-e13b285b53a7",
 		"name": "Ongoing WMS Automation API examples",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -271,6 +271,128 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Upload a file to an order",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/UploadOrderFile\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <UploadOrderFile xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{UserName}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <OrderFile>\r\n                <File>\r\n                    <FileName>TestFile.txt</FileName>\r\n                    <FileBytes>VGVzdGluZyAxMjM=</FileBytes>\r\n                    <MimeType>text/plain</MimeType>\r\n                </File>\r\n                <GoodsOwnerId>{{GoodsOwnerId}}</GoodsOwnerId>\r\n                <OrderFileIdentificationType>GoodsOwnerOrderNumber</OrderFileIdentificationType>\r\n                <GoodsOwnerOrderNumber>{{GoodsOwnerOrderNumber}}</GoodsOwnerOrderNumber>\r\n            </OrderFile>\r\n        </UploadOrderFile>\r\n    </soap:Body>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inorder",
+			"item": [
+				{
+					"name": "Get inorders by query",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/GetOrdersByQuery\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetOrdersByQuery xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Query>\r\n                <OrderIds>\r\n                    <int>123</int>\r\n                </OrderIds>\r\n            </Query>\r\n        </GetOrdersByQuery>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload a file to an inorder",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/UploadInOrderFile\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <UploadInOrderFile xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{UserName}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Operation>\r\n                <InOrderIdentification>\r\n                    <InOrderId>{{InOrderId}}</InOrderId>\r\n                </InOrderIdentification>\r\n                <FileIdentification>FileName</FileIdentification>\r\n                <File>\r\n                    <FileName>TestFile.txt</FileName>\r\n                    <FileBytes>VGVzdGluZyAxMjM=</FileBytes>\r\n                    <MimeType>text/plain</MimeType>\r\n                </File>\r\n            </Operation>\r\n        </UploadInOrderFile>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -345,6 +467,133 @@
 						"body": {
 							"mode": "raw",
 							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <CreatePrintJob xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <PrintJob>\r\n                <ReportId>47</ReportId>\r\n                <IdsToPrint>\r\n                    <int>10032</int>\r\n                    <int>10033</int>\r\n                </IdsToPrint>\r\n                <PrintAsUser>\r\n                    <UserName>WarehouseWorker1</UserName>\r\n                </PrintAsUser>\r\n                <PrintAsComputer>\r\n                    <ComputerName>PackTable1</ComputerName>\r\n                </PrintAsComputer>\r\n                <PrintAsGoodsOwner>\r\n                    <GoodsOwnerId>45</GoodsOwnerId>\r\n                </PrintAsGoodsOwner>\r\n            </PrintJob>\r\n        </CreatePrintJob>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "Get file list",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/GetFileList\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetFileList xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{UserName}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <FileSearchValues>\r\n                <GoodsOwnerId>{{GoodsOwnerId}}</GoodsOwnerId>\r\n                <OrderId>{{OrderId}}</OrderId>\r\n                <!--<GoodsOwnerCode>string</GoodsOwnerCode> -->\r\n                <!--<ArticleNo>string</ArticleNo> -->\r\n                <!--<ArticleName>string</ArticleName> -->\r\n                <!--<OrderNumber>string</OrderNumber> -->\r\n                <!--<ArticleSystemId>int</ArticleSystemId> -->\r\n                <!--<InOrderId>int</InOrderId> -->\r\n            \r\n            </FileSearchValues>\r\n        </GetFileList>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get file",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/GetFile\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetFile xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{UserName}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <FileId>{{FileId}}</FileId>\r\n        </GetFile>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OngoingURL}}",
+							"host": [
+								"{{OngoingURL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get users",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SOAPAction",
+								"type": "text",
+								"value": "\"http://ongoingsystems.se/Automation/GetUsers\""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "text/xml;charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetUsers xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{UserName}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Query />\r\n        </GetUsers>\r\n    </soap:Body>\r\n</soap:Envelope>",
 							"options": {
 								"raw": {
 									"language": "xml"

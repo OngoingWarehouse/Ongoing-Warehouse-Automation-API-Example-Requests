@@ -1,4 +1,4 @@
-<a href="https://www.ongoingwarehouse.com">![Logo](https://www.ongoingwarehouse.com/images/logotype.png)</a>
+<a href="https://www.ongoingwarehouse.com">![Logo](https://ongoingwarehouse.com/images/ongoing_logo_10k_blue.png)</a>
 # Ongoing Warehouse Automation API example requests
 [Ongoing WMS](https://www.ongoingwarehouse.com/) is a Warehouse Management System (WMS).
 

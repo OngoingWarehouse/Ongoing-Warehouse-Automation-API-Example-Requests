@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "4ae1bf13-f8f6-4b0a-8f2e-e13b285b53a7",
+		"_postman_id": "62386f35-ffd6-45f6-9497-dddf246d9328",
 		"name": "Ongoing WMS Automation API examples",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10700843"
 	},
 	"item": [
 		{
@@ -329,7 +330,7 @@
 							{
 								"key": "SOAPAction",
 								"type": "text",
-								"value": "\"http://ongoingsystems.se/Automation/GetOrdersByQuery\""
+								"value": "\"http://ongoingsystems.se/Automation/GetInOrdersByQuery\""
 							},
 							{
 								"key": "Content-Type",
@@ -339,7 +340,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetOrdersByQuery xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Query>\r\n                <OrderIds>\r\n                    <int>123</int>\r\n                </OrderIds>\r\n            </Query>\r\n        </GetOrdersByQuery>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <soap:Body>\r\n    <GetInOrdersByQuery xmlns=\"http://ongoingsystems.se/Automation\">\r\n      <UserName>{{Username}}</UserName>\r\n      <Password>{{Password}}</Password>\r\n      <Query>\r\n        <InOrderIds>\r\n          <int>123</int>\r\n          <int>456</int>\r\n        </InOrderIds>\r\n      </Query>\r\n    </GetInOrdersByQuery>\r\n  </soap:Body>\r\n</soap:Envelope>",
 							"options": {
 								"raw": {
 									"language": "xml"

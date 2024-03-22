@@ -628,7 +628,7 @@
 							{
 								"key": "SOAPAction",
 								"type": "text",
-								"value": "\"http://ongoingsystems.se/Automation/GetUsers\""
+								"value": "\"http://ongoingsystems.se/Automation/GetInvoicesByQuery\""
 							},
 							{
 								"key": "Content-Type",
@@ -638,7 +638,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetUsers xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Query />\r\n        </GetUsers>\r\n    </soap:Body>\r\n</soap:Envelope>",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r\n<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <GetInvoicesByQuery xmlns=\"http://ongoingsystems.se/Automation\">\r\n            <UserName>{{Username}}</UserName>\r\n            <Password>{{Password}}</Password>\r\n            <Query>\r\n                <GetInvoiceRows>true</GetInvoiceRows>\r\n                <InvoiceIds>\r\n                    <int>1234</int>\r\n                    <int>5678</int>\r\n                </InvoiceIds>\r\n            </Query>\r\n        </GetInvoicesByQuery>\r\n    </soap:Body>\r\n</soap:Envelope>",
 							"options": {
 								"raw": {
 									"language": "xml"
